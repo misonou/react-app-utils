@@ -14,7 +14,7 @@ function fillData(form, data, prefix) {
         var path = prefix ? prefix + '.' + i : i + '';
         if (isPlainObject(v) || isArray(v)) {
             updated = fillData(form, v, path) || updated;
-        } else if (form.element(path) && !form.getValue(path)) {
+        } else if (form.element(path) && form.getValue(path) !== v) {
             form.setValue(path, v);
             updated = true;
         }
