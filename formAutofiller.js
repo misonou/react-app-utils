@@ -16,7 +16,7 @@ function fillData(form, data, prefix) {
             updated = fillData(form, v, path) || updated;
         } else if (form.element(path) && form.getValue(path) !== v) {
             form.setValue(path, v);
-            updated = true;
+            updated = updated || form.getValue(path) === v;
         }
     });
     return updated;
@@ -35,8 +35,9 @@ async function promptAutofill(form) {
         ...data
     });
     if (data) {
+        var count = 0;
         console.log('[Autofill]', data);
-        while (fillData(form, data, '')) {
+        while (fillData(form, data, '') && ++count < 10) {
             await Promise.resolve();
         }
     }
