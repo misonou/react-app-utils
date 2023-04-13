@@ -8,23 +8,18 @@ import promptForChoice from "./lib/promptForChoice.js";
  * @param {any} data
  * @param {string} prefix
  */
-async function fillData(form, data, prefix) {
-    var updated;
-    do {
-        updated = false;
-        each(data, function (i, v) {
-            var path = prefix ? prefix + '.' + i : i + '';
-            if (isPlainObject(v) || isArray(v)) {
-                fillData(form, v, path);
-            } else if (form.element(path) && !form.getValue(path)) {
-                form.setValue(path, v);
-                updated = true;
-            }
-        });
-        if (updated) {
-            await Promise.resolve();
+function fillData(form, data, prefix) {
+    var updated = false;
+    each(data, function (i, v) {
+        var path = prefix ? prefix + '.' + i : i + '';
+        if (isPlainObject(v) || isArray(v)) {
+            updated = fillData(form, v, path) || updated;
+        } else if (form.element(path) && !form.getValue(path)) {
+            form.setValue(path, v);
+            updated = true;
         }
-    } while (updated);
+    });
+    return updated;
 }
 
 /**
@@ -41,7 +36,9 @@ async function promptAutofill(form) {
     });
     if (data) {
         console.log('[Autofill]', data);
-        await fillData(form, data, '');
+        while (fillData(form, data, '')) {
+            await Promise.resolve();
+        }
     }
 }
 
