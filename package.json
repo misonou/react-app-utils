@@ -9,7 +9,8 @@
   "repository": "github:misonou/react-app-utils",
   "dependencies": {
     "@misonou/react-css-utils": "^1.0.1",
-    "brew-js-react": "^0.3.1"
+    "brew-js-react": ">=0.3.1",
+    "zeta-dom": ">=0.3.6"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
