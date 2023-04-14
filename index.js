@@ -1,9 +1,11 @@
 import FormDevToolMixin from "./lib/FormDevToolMixin.js";
 import createApi from "./lib/createApi.js";
 import promptForChoice from "./lib/promptForChoice.js";
+import setIdleTimeout from "./lib/setIdleTimeout.js";
 
 export {
     createApi,
     promptForChoice,
+    setIdleTimeout,
     FormDevToolMixin
 }
