@@ -14,9 +14,12 @@ function fillData(form, data, prefix) {
         var path = prefix ? prefix + '.' + i : i + '';
         if (isPlainObject(v) || isArray(v)) {
             updated = fillData(form, v, path) || updated;
-        } else if (form.element(path) && form.getValue(path) !== v) {
-            form.setValue(path, v);
-            updated = updated || form.getValue(path) === v;
+        } else if (form.element(path)) {
+            var prev = form.getValue(path);
+            if (prev !== v) {
+                form.setValue(path, v);
+                updated = updated || form.getValue(path) !== prev;
+            }
         }
     });
     return updated;
