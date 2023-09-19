@@ -1,5 +1,5 @@
 import dom from "zeta-dom/dom";
-import { each, isArray, isPlainObject } from "zeta-dom/util";
+import { each, isArray, isPlainObject, resolve } from "zeta-dom/util";
 import { FormContext } from "zeta-dom-react";
 import promptForChoice from "./lib/promptForChoice.js";
 
@@ -41,7 +41,8 @@ async function promptAutofill(form) {
         var count = 0;
         console.log('[Autofill]', data);
         while (fillData(form, data, '') && ++count < 10) {
-            await Promise.resolve();
+            await resolve();
+            await resolve();
         }
     }
 }
