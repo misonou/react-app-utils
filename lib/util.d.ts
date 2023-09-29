@@ -1,3 +1,5 @@
+export { openDeferredURL as openDeferredLink } from "brew-js/util";
+
 interface SetIdleTimeoutOptions {
     /**
      * Whether user interaction is counted across multiple frames.
@@ -57,17 +59,3 @@ export interface UserActionOptions {
  * - send `abort` signal when the element is removed from document
  */
 export function handleUserAction<T extends { currentTarget: EventTarget }>(callback?: (event: T, signal: AbortSignal) => any, options?: UserActionOptions): (event: T) => Promise<any>;
-
-/**
- * Opens a new window with URL that is yet to be resolved asynchronously.
- *
- * The returned promise will resolve to `true` when the resolved URL is being loaded in target window;
- * otherwise to `false` if the new window cannot be opened or the opened window is closed before URL is resolved.
- * It will forward rejection result if the given promise rejects.
- *
- * @param promise A promise that resolves the target URL.
- * @param initialUrl URL to show during loading, typically a loading screen. `about:blank` will be used if not specified.
- * @param target Name of target window.
- * @param features A string containing a comma-separated list of window features, same as {@link Window.open}.
- */
-export function openDeferredLink(promise: Promise<string>, initialUrl?: string, target?: string, features?: string): Promise<boolean>;
