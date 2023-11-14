@@ -10,9 +10,10 @@
   "homepage": "https://misonou.github.io",
   "dependencies": {
     "@misonou/react-css-utils": "^1.0.1",
+    "brew-js": ">=0.5.11",
     "brew-js-react": ">=0.3.1",
     "waterpipe": "^2.7.0",
-    "zeta-dom": ">=0.3.6"
+    "zeta-dom": ">=0.4.15"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
