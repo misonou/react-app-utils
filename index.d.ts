@@ -4,6 +4,7 @@ import createApi from "./lib/createApi";
 import fuzzyMatch from "./lib/fuzzyMatch";
 import memoize from "./lib/memoize";
 import promptForChoice from "./lib/promptForChoice";
+import useTextInputAutofillFix from "./lib/useTextInputAutofillFix";
 
 export type { IConsole } from "./lib/HTMLConsole";
 export type { MatchableItem, MatchedItem, MatchOptions } from "./lib/fuzzyMatch";
@@ -14,6 +15,7 @@ export {
     fuzzyMatch,
     memoize,
     promptForChoice,
+    useTextInputAutofillFix,
     FormDevToolMixin,
     HTMLConsole
 }
