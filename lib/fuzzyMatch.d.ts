@@ -27,6 +27,11 @@ export interface MatchOptions {
      * Items with longest matched substring will appear first.
      */
     sortByRelevancy?: boolean;
+    /**
+     * Whether to include all items in the returned list.
+     * Items that have no matches will appear last when {@link MatchOptions.sortByRelevancy} is set.
+     */
+    returnAll?: boolean;
 }
 
 /**
