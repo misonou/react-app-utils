@@ -21,6 +21,13 @@ declare const memoize: {
     <T, K extends (keyof T)[]>(obj: T, keys: K): Pick<T, Zeta.ArrayMember<K>>;
 
     /**
+     * Gets whether result is cached for a specific set of arguments.
+     * @param fn Memoized function returned by {@link memoize}.
+     * @param args List of arguments.
+     */
+    has<T extends Zeta.AnyFunction>(fn: T, args: Parameters<T>): boolean;
+
+    /**
      * Updates cached result for the given function with specific arguments.
      * @param fn Memoized function returned by {@link memoize}.
      * @param args List of arguments.
