@@ -1,5 +1,19 @@
 interface ApiEventMap {
-    error: Zeta.ZetaErrorEvent;
+    error: ApiErrorEvent;
+}
+
+interface ApiErrorEvent extends Zeta.ZetaErrorEvent {
+    /**
+     * Gets the function that triggered the error.
+     *
+     * Note that the callee returned will be the wrapper function returned from {@link createApi}
+     * that forwards invocation to either real or mocked implementations.
+     */
+    readonly callee: Zeta.AnyFunction;
+    /**
+     * Get the arguments passed to the callee.
+     */
+    readonly arguments: any[];
 }
 
 interface ApiEventListener<T> {
