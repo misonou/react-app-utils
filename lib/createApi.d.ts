@@ -30,7 +30,7 @@ interface ApiOptions<T> {
      *
      * Mock is used when `REACT_APP_MOCK` environment variable is set to `true`.
      */
-    mock?: Partial<T>;
+    mock?: Partial<T> | ((implementation: T) => Partial<T>);
 }
 
 /**
