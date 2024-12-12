@@ -1,6 +1,6 @@
 import { } from "zeta-dom";
 
-interface PromptOptions {
+export interface PromptOptions {
     /**
      * Displays dropdown only while the specified keys are pressed.
      */

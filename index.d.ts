@@ -10,6 +10,7 @@ import useTextInputAutofillFix from "./lib/useTextInputAutofillFix";
 export type { IConsole } from "./lib/HTMLConsole";
 export type { MatchableItem, MatchedItem, MatchOptions } from "./lib/fuzzyMatch";
 export type { MenuKeystrokeOptions } from "./lib/MenuKeystrokeMixin";
+export type { PromptOptions } from "./lib/promptForChoice";
 export * from "./lib/util.js";
 
 export {
