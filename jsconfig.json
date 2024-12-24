@@ -3,6 +3,7 @@
         "target": "es2015",
         "lib": ["dom", "es2015", "es2017.object"],
         "moduleResolution": "node",
+        "module": "es2020",
         "checkJs": true,
         "strict": true,
         "noImplicitAny": false,
