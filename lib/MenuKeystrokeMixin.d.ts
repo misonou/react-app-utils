@@ -2,6 +2,11 @@ import { StatefulMixin } from "brew-js-react";
 
 export interface MenuKeystrokeOptions {
     /**
+     * Specifies the menu element containing menu items. It can be a DOM element, a selector to a DOM element, or a React ref object.
+     * Default to element which the mixin is applied to.
+     */
+    menuElement?: HTMLElement | string | React.RefObject<HTMLElement>;
+    /**
      * CSS selector which specifies elements as traversable menu items.
      */
     selector: string;
