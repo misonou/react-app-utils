@@ -5,6 +5,7 @@ import createApi from "./lib/createApi.js";
 import fuzzyMatch from "./lib/fuzzyMatch.js";
 import memoize from "./lib/memoize.js";
 import promptForChoice from "./lib/promptForChoice.js";
+import { useUndoableInputMixin, useUndoableState, UndoableInputMixin } from "./lib/undoable.js";
 import useTextInputAutofillFix from "./lib/useTextInputAutofillFix.js";
 
 export * from "./lib/util.js";
@@ -16,7 +17,10 @@ export {
     promptForChoice,
     useMenuKeystrokeMixin,
     useTextInputAutofillFix,
+    useUndoableInputMixin,
+    useUndoableState,
     FormDevToolMixin,
     HTMLConsole,
-    MenuKeystrokeMixin
+    MenuKeystrokeMixin,
+    UndoableInputMixin
 }
