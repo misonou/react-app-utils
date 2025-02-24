@@ -28,6 +28,11 @@ export interface MenuKeystrokeOptions {
      * Default is `false`.
      */
     autoSelect?: boolean;
+    /**
+     * Whether to traverse back to start (or end) after reaching the last (or first) menu item.
+     * Default is `false`.
+     */
+    wrapAround?: boolean;
 }
 
 /**
