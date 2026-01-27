@@ -84,4 +84,4 @@ export function useUndoableInputMixin(initialValue?: string, debounce?: number):
  * @param initialState Initial state.
  * @param debounce Minimum interval in milliseconds before next state to be tracked.
  */
-export function useUndoableState<T>(initialState: T | (() => T), debounce?: number): readonly [T, React.Dispatch<React.SetStateAction<A>>, UndoableState<T>];
+export function useUndoableState<T>(initialState: T | (() => T), debounce?: number): readonly [T, React.Dispatch<React.SetStateAction<T>>, UndoableState<T>];
