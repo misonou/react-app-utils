@@ -70,6 +70,12 @@ export class UndoableInputMixin extends StatefulMixin {
      * @param callback A callback the receives the new value and the triggering input element.
      */
     onChange(callback: (this: HTMLElement, value: string, element: HTMLElement) => void): Zeta.UnregisterCallback;
+
+    /**
+     * Applies custom attributes to element.
+     * @private It is used internally by mixins and is declared for type inference.
+     */
+    getCustomAttributes(): Required<Pick<React.HTMLAttributes<HTMLElement>, 'onChange'>>;
 }
 
 /**
