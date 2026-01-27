@@ -39,6 +39,11 @@ export interface MenuKeystrokeOptions {
  * @see {@link useMenuKeystrokeMixin}
  */
 export class MenuKeystrokeMixin extends StatefulMixin {
+    /**
+     * Selects the current menu item.
+     * @returns Whether an item is selected.
+     */
+    select(): boolean;
 }
 
 /**
