@@ -16,10 +16,6 @@ interface ApiErrorEvent extends Zeta.ZetaErrorEvent {
     readonly arguments: any[];
 }
 
-interface ApiEventListener<T> {
-    on<E extends keyof ApiEventMap>(event: E, handler: Zeta.ZetaEventHandler<E, ApiEventMap, T>): Zeta.UnregisterCallback;
-}
-
 interface ApiOptions<T> {
     /**
      * Specifies real implemenations.
@@ -37,4 +33,4 @@ interface ApiOptions<T> {
  * Creates a wrapper that by condition executes mocked implementions.
  * @param options A dictionary specifying options. See {@link ApiOptions}.
  */
-export default function createApi<T>(options: ApiOptions<T>): T & ApiEventListener<T>;
+export default function createApi<T>(options: ApiOptions<T>): T & Zeta.ZetaEventDispatcher<ApiEventMap, T>;
